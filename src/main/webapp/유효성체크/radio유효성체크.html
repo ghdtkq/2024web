@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+function check(){
+	//alert("가나다라마바사아자차카타파하")
+	let frm = document.frm;
+// 	alert(frm);
+
+	let gender = frm.gender;
+	//alert(gender.length);
+	//alert(gender[1].checked);
+	//alert(gender[2].checked);
+	//alert(gender[3].checked);
+	for( let i=0; i<gender.length ; i++){
+		if( gender[i].checked){
+			flag=true;
+			break;
+		}
+	}		
+	
+    if (!flag) {
+        alert("성별을 선택해 주세요");
+        return false;
+    } else {
+        //true
+        frm.submit();
+    }
+}
+
+
+</script>
+
+
+
+</head>
+<body>
+
+
+<form name="frm" action="radio_action.jsp"  method="post"   onsubmit="return check()">
+	<label><input type="radio" value="M" name="gender">남성</label>
+    <label><input type="radio" value="W" name="gender">여성</label>
+    <label><input type="radio" value="O" name="gender">기타</label>        
+    <button >전송</button>
+</form>
+   
+   
+</body>
+</html>
